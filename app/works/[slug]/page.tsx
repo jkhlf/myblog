@@ -8,15 +8,14 @@ interface ProjectDetailProps {
     slug: string
   }
 }
-
 export async function generateStaticParams() {
   return projects.map((project) => ({
-    slug: project.slug
+  slug: project.slug
   }));
-}
-
-export default async function ProjectDetail({ params }: ProjectDetailProps) {
-  const { slug } = await params;
+  }
+  
+  export default async function ProjectDetail({ params }: ProjectDetailProps) {
+  const { slug } =  await params;
   const project = projects.find(p => p.slug === slug)
 
   if (!project) {

@@ -5,7 +5,6 @@ function NavLinks() {
   return (
     <nav className="flex justify-center items-center mb-12 ">
        <ThemeToggle />
-             {/* <h1 className="text-4xl font-normal">Hey, I'm Khalaf.</h1>  */}
             <div className="invisible sm:visible">
             </div>
             <div className="flex gap-4 text-sm border rounded-md px-2 py-1">

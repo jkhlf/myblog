@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { projects } from '@/lib/projects'
 
 interface ProjectDetailProps {
@@ -8,14 +8,15 @@ interface ProjectDetailProps {
     slug: string
   }
 }
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
-  slug: project.slug
-  }));
-  }
-  
-  export default async function ProjectDetail({ params }: ProjectDetailProps) {
-  const { slug } =  await params;
+    slug: project.slug
+  }))
+}
+
+export default async function ProjectDetail({ params }: ProjectDetailProps) {
+  const { slug } = await params
   const project = projects.find(p => p.slug === slug)
 
   if (!project) {
@@ -23,89 +24,96 @@ export async function generateStaticParams() {
   }
 
   return (
-    <main className="max-w-4xl mx-auto">
-      <nav className="flex items-center gap-4 mb-12 text-sm">
+    <main className="max-w-4xl mx-auto px-6 dark:text-slate-200">
+      <nav className="flex items-center gap-4 mb-10 text-sm">
         <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
           <ArrowLeft size={16} />
           BACK
         </Link>
-        <span>/</span>
-        <Link href="/works" className="hover:text-gray-600">
-          ALL WORKS
-        </Link>
-        <span>/</span>
-        <span className="border rounded-md px-3 py-1">
-          {project.title.toUpperCase()}
-        </span>
       </nav>
 
-      <article className="space-y-12">
+      <article className="space-y-16">
         <header className="space-y-8">
-          <h1 className="text-4xl font-normal">{project.title}</h1>
+          <div className="space-y-2">
+            <div className="flex items-center gap-4 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <Calendar size={16} />
+                <span>{project.year}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock size={16} />
+                <span>{project.duration}</span>
+              </div>
+            </div>
+            <h1 className="text-4xl font-normal">{project.title}</h1>
+          </div>
           <p className="text-lg text-gray-600 max-w-2xl">{project.description}</p>
-          {project.link && (
-            <p>
-              Explore the full project {' '}
-              <Link href={project.link} target='_blank' className="underline hover:text-gray-600">
-                {project.linkText} 
-              </Link>{' '}
-              here.
-            </p>
-          )}
         </header>
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={800}
-            height={600}
-            className="w-full"
-          />
+        <div className="bg-gradient-to-b from-gray-100 to-white p-1 rounded-xl">
+          <div className="aspect-video relative rounded-lg overflow-hidden">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
-        {project.context && (
-          <section className="space-y-6">
-            <h2 className="text-sm font-mono text-gray-400">CONTEXT</h2>
-            <h3 className="text-2xl">{project.context.title}</h3>
-            <p className="text-gray-600 max-w-2xl">{project.context.description}</p>
-          </section>
-        )}
-
-        {project.content && (
-          <section className="space-y-6">
-            <h2 className="text-sm font-mono text-gray-400">CONTENT</h2>
-
-            {project.content.overview && (
+        <section className="grid md:grid-cols-[200px,1fr] gap-8">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-sm font-mono text-gray-400 mb-4">CONTRIBUTION</h2>
+              <ul className="space-y-2">
+                {project.contribution.map((item, i) => (
+                  <li key={i} className="text-sm">{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-mono text-gray-400 mb-4">TECH STACK</h2>
+              <ul className="flex flex-wrap gap-2">
+                {project.tags.map((tag, i) => (
+                  <li key={i} className="text-sm px-3 py-1 bg-gray-100 rounded-full dark:text-black">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {project.link && (
               <div>
-                <h3 className="text-lg font-semibold">Overview</h3>
-                <p className="text-gray-600 max-w-2xl">{project.content.overview}</p>
+                <h2 className="text-sm font-mono text-gray-400 mb-4">LINKS</h2>
+                <Link 
+                  href={project.link} 
+                  target="_blank"
+                  className="text-sm underline hover:text-gray-600"
+                >
+                  {project.linkText}
+                </Link>
               </div>
             )}
+          </div>
 
-            {project.content.challenge && (
-              <div>
-                <h3 className="text-lg font-semibold">Challenge</h3>
-                <p className="text-gray-600 max-w-2xl">{project.content.challenge}</p>
-              </div>
-            )}
-
-            {project.content.solution && (
-              <div>
-                <h3 className="text-lg font-semibold">Solution</h3>
-                <p className="text-gray-600 max-w-2xl">{project.content.solution}</p>
-              </div>
-            )}
-
-            {project.content.impact && (
-              <div>
-                <h3 className="text-lg font-semibold">Impact</h3>
-                <p className="text-gray-600 max-w-2xl">{project.content.impact}</p>
-              </div>
-            )}
-          </section>
-        )}
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-sm font-mono text-gray-400 mb-4">OVERVIEW</h2>
+              <p className="text-gray-600">{project.overview}</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-mono text-gray-400 mb-4">HIGHLIGHTS</h2>
+              <ul className="space-y-4">
+                {project.highlights.map((highlight, i) => (
+                  <li key={i} className="flex gap-4">
+                    <span className="text-slate-200">→</span>
+                    <span className="text-gray-600 dark:text-slate-200">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
       </article>
     </main>
-  );
+  )
 }

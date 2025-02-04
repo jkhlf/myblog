@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import { projects } from '@/lib/projects'
+import { projects } from '@/app/data/projects'
 
 export default function WorksPage() {
   return (

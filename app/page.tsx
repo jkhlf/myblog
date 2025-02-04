@@ -3,7 +3,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { ProjectCard } from '@/components/project-card'
-import { projects } from '@/lib/projects'
+import { projects } from '@/app/data/projects'
 
 
 

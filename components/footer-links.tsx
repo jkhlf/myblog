@@ -1,4 +1,5 @@
 import React from 'react'
+import { siteConfig } from '@/app/site-config'
 
 function FooterLinks() {
   return (
@@ -8,11 +9,11 @@ function FooterLinks() {
       <span>/</span>
       <a href="mailto:joao.khalaf@gmail.com" className="hover:text-black">MAIL</a>
       <span>/</span>
-      <a href="https://x.com/kh4lf_" className="hover:text-black">TWITTER</a>
+      <a href={siteConfig.links.x} className="hover:text-black">TWITTER</a>
       <span>/</span>
-      <a href="https://www.linkedin.com/in/joaokhalaf/" className="hover:text-black">LINKEDIN</a>
+      <a href={siteConfig.links.linkedin} className="hover:text-black">LINKEDIN</a>
       <span>/</span>
-      <a href="https://github.com/jkhlf" className="hover:text-black">GITHUB</a>
+      <a href={siteConfig.links.github} className="hover:text-black">GITHUB</a>
     </div>
   </footer>
   )

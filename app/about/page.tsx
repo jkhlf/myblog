@@ -32,7 +32,7 @@ function AboutMe() {
         <div className="space-y-8">
           <div className="relative h-64 overflow-hidden rounded-lg">
             <Image
-              src="/pfp.jpg"
+              src="/imgs/pfp.jpg"
               alt="Robert's portrait"
               fill
               className="object-contain"

@@ -33,7 +33,7 @@ function AboutMe() {
           <div className="relative h-64 overflow-hidden rounded-lg">
             <Image
               src="/imgs/pfp.jpg"
-              alt="Robert's portrait"
+              alt="Dazai Osamu profile picture, BSD anime character" 
               fill
               className="object-contain"
             />

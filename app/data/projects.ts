@@ -18,6 +18,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "003",
+    slug: "anime-tracker",
+    title: "Anime Tracker",
+    year: 2025,
+    description: "A web application that helps users track their favorite anime series and discover new shows.",
+    image: "/imgs/tracker.png",
+    link: "/",
+    linkText: "No Live Demo for now",
+    tags: ["React", "TypeScript", "Jikan API"],
+    duration: "Still in progress",
+    contribution: ["Frontend Development", "UI/UX Design", "API Integration"],
+    overview: "Anime Tracker is a personal project that combines my passion for anime with my web development skills. The app allows users to track their favorite series, receive updates on new episodes, and discover new shows based on their preferences.",
+    highlights: [
+      "Built a responsive web application using React and TypeScript for a seamless user experience",
+      "Integrated the Jikan API to fetch anime data and provide real-time updates on new episodes",
+      "Designed an intuitive UI with a focus on user-friendly navigation and personalized recommendations"
+    ]
+  },
+  {
     id: "002",
     slug: "expense-gov",
     title: "Expense Gov",
@@ -42,7 +61,7 @@ export const projects: Project[] = [
     title: "Dolly Rebrand",
     year: 2023,
     description: "A conceptual rebranding project exploring modern design solutions for a classic Brazilian soda brand.",
-    image: "/imgs/Dolly.png",
+    image: "/imgs/dolly.png",
     tags: ["Design", "Figma", "Branding"],
     color: "#0a66c2",
     link: "https://www.figma.com/design/mWJEn4i4mN6PzD3CTZ4MIo/Dolly-Rebranding",

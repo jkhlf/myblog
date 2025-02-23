@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-4xl font-normal">Hey, I'm Khalaf.</h1>
         <div className="max-w-2xl space-y-4 text-gray-600">
           <p>
-          Fullstack Developer proficient in front-end development with React and Next.js. Experienced with Java for back-end development. I have an interest in data analysis and am currently part of the Santander Tech+ Team, engaged in a data analysis learning track.
+          Software Developer | Data Analysis Enthusiast, proficient in front-end development with TypeScript and React. Experienced with Java for back-end development. I have an interest in data analysis and am currently part of the Santander Tech+ Team, engaged in a data analysis learning track.
           </p>
           <p>
             Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike.

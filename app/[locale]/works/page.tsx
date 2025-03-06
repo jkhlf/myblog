@@ -23,7 +23,9 @@ export default async function WorksPage() {
         {projects.map((project) => (
           <Link
             key={project.id}
-            href={{ pathname: '/works/[slug]', params: { slug: project.slug } }}
+            href={{
+              pathname: '/works/[slug]', params: { slug: project.slug }
+            }}
             className="group flex items-baseline"
           >
             <span className="text-gray-400 w-12 font-mono">{project.id}</span>

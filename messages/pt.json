@@ -26,10 +26,13 @@
     "year": "Ano",
     "duration": "Duração",
     "tags": "Tecnologias",
-    "contribution": "Minha Contribuição",
     "overview": "Visão Geral",
     "highlights": "Destaques",
-    "viewProject": "Ver Projeto"
+    "viewProject": "Ver Projeto",
+    "back": "VOLTAR",
+    "contribution": "CONTRIBUIÇÃO",
+    "techStack": "TECNOLOGIAS",
+    "links": "LINKS"
   },
   "AboutPage": {
     "title": "Sobre Mim",
@@ -40,5 +43,55 @@
     },
     "downloadResume": "Baixar Currículo",
     "experience": "Experiência"
+  },
+  "Projects": {
+    "anime-tracker": {
+      "title": "Anime Tracker",
+      "description": "Uma aplicação web que ajuda os usuários a acompanharem suas séries de anime favoritas e descobrir novos shows.",
+      "linkText": "Sem Demo por enquanto",
+      "contribution": [
+        "Desenvolvimento Frontend",
+        "Design UI/UX",
+        "Integração de API"
+      ],
+      "overview": "Anime Tracker é um projeto pessoal que combina minha paixão por anime com minhas habilidades em desenvolvimento web. O aplicativo permite que os usuários acompanhem suas séries favoritas, recebam atualizações sobre novos episódios e descubram novos shows com base em suas preferências.",
+      "highlights": [
+        "Construí uma aplicação web responsiva usando React e TypeScript para uma experiência de usuário fluida",
+        "Integrei a API Jikan para buscar dados de anime e fornecer atualizações em tempo real sobre novos episódios",
+        "Projetei uma UI intuitiva com foco em navegação amigável e recomendações personalizadas"
+      ]
+    },
+    "expense-gov": {
+      "title": "Expense Gov",
+      "description": "Uma ferramenta de visualização de dados que transforma informações complexas sobre gastos governamentais em insights acessíveis para os cidadãos.",
+      "linkText": "Demo ao Vivo",
+      "contribution": [
+        "Desenvolvimento Frontend",
+        "Design UI/UX",
+        "Visualização de Dados"
+      ],
+      "overview": "Expense Gov torna os dados de gastos governamentais acessíveis por meio de visualizações intuitivas. Construído durante meus estudos de desenvolvimento web, este projeto se concentra em transformar dados financeiros complexos em insights claros e acionáveis.",
+      "highlights": [
+        "Desenvolvi uma interface intuitiva para explorar dados de gastos governamentais usando Next.js e Shadcn",
+        "Implementei gráficos e tabelas interativos para visualizar padrões de despesas ao longo de diferentes anos",
+        "Integrei dados em tempo real da API Codante para garantir precisão e relevância"
+      ]
+    },
+    "dolly-rebrand": {
+      "title": "Rebranding Dolly",
+      "description": "Um projeto conceitual de rebranding explorando soluções modernas de design para uma marca clássica de refrigerante brasileira.",
+      "linkText": "Ver Design",
+      "contribution": [
+        "Design de Marca",
+        "Design de UI",
+        "Identidade Visual"
+      ],
+      "overview": "Como parte do meu curso de design na Fatec Rubens Lara, explorei o desafio de modernizar uma marca brasileira amada enquanto preservava sua identidade central e significado cultural.",
+      "highlights": [
+        "Criei um sistema de identidade visual modernizado que respeita o patrimônio da marca",
+        "Desenvolvi novos conceitos de embalagem com foco em estética premium e apelo nas prateleiras",
+        "Elaborei um sistema de design digital coeso no Figma para expressão consistente da marca"
+      ]
+    }
   }
 }

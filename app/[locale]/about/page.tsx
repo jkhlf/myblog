@@ -1,5 +1,3 @@
-import { Briefcase, Download } from 'lucide-react';
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import ClientAboutPage from '@/components/client-about-page';
 

@@ -1,44 +1,97 @@
 {
     "Principal": {
-        "title": "Khalaf, João. Pleasure to meet you!",
-        "description": "Software Developer with practical experience in web and mobile applications. I work with technologies such as JavaScript, React, TypeScript, Node.js, and Java, always focused on delivering measurable results and following agile methodologies. My main goal is to become a great professional.",
-        "funny": "Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike."
+      "title": "Khalaf, João. Pleasure to meet you!",
+      "description": "Software Developer with practical experience in web and mobile applications. I work with technologies such as JavaScript, React, TypeScript, Node.js, and Java, always focused on delivering measurable results and following agile methodologies. My main goal is to become a great professional.",
+      "funny": "Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike."
     },
     "Navigation": {
-        "work": "/WORK",
-        "writing": "/WRITING",
-        "about": "/ABOUT"
+      "work": "/WORK",
+      "writing": "/WRITING",
+      "about": "/ABOUT"
     },
     "HomePage": {
-        "featuredWork": "Featured Work",
-        "viewAllWorks": "View all works"
+      "featuredWork": "Featured Work",
+      "viewAllWorks": "View all works"
     },
     "WritingPage": {
-        "title": "Writing.",
-        "comingSoon": "One day I will have enough knowledge to write an article :)",
-        "back": "BACK"
+      "title": "Writing.",
+      "comingSoon": "One day I will have enough knowledge to write an article :)",
+      "back": "BACK"
     },
     "WorksPage": {
-        "back": "BACK",
-        "allWorks": "ALL WORKS"
+      "back": "BACK",
+      "allWorks": "ALL WORKS"
     },
     "Project": {
-        "year": "Year",
-        "duration": "Duration",
-        "tags": "Technologies",
-        "contribution": "My Contribution",
-        "overview": "Overview",
-        "highlights": "Highlights",
-        "viewProject": "View Project"
+      "year": "Year",
+      "duration": "Duration",
+      "tags": "Technologies",
+      "overview": "Overview",
+      "highlights": "Highlights",
+      "viewProject": "View Project",
+      "back": "BACK",
+      "contribution": "CONTRIBUTOIN",
+      "techStack": "TECH STACK", 
+      "links": "LINKS"         
     },
     "AboutPage": {
-        "title": "About Me",
-        "bio": {
-            "part1": "I am a FullStack Developer and Internet Systems student at Fatec - RL, currently working as an intern and honing my skills in building solutions.",
-            "part2": "I'm going for the second year in a row as a Data Structure Monitor at college, it's been a great experience. Personally, I think I'm good at teaching, but that's something for the very distant future.",
-            "part3": "I have a growing interest in Data Analysis. My future goal is to work with Artificial Intelligence and Machine Learning, with the prospect of turning my professional trajectory towards the area of ​​data analysis."
-        },
-        "downloadResume": "Download Resume",
-        "experience": "Experience"
+      "title": "About Me",
+      "bio": {
+        "part1": "I am a FullStack Developer and Internet Systems student at Fatec - RL, currently working as an intern and honing my skills in building solutions.",
+        "part2": "I'm going for the second year in a row as a Data Structure Monitor at college, it's been a great experience. Personally, I think I'm good at teaching, but that's something for the very distant future.",
+        "part3": "I have a growing interest in Data Analysis. My future goal is to work with Artificial Intelligence and Machine Learning, with the prospect of turning my professional trajectory towards the area of ​​data analysis."
+      },
+      "downloadResume": "Download Resume",
+      "experience": "Experience"
+    },
+    "Projects": {
+      "anime-tracker": {
+        "title": "Anime Tracker",
+        "description": "A web application that helps users track their favorite anime series and discover new shows.",
+        "linkText": "No Live Demo for now",
+        "contribution": [
+          "Frontend Development",
+          "UI/UX Design",
+          "API Integration"
+        ],
+        "overview": "Anime Tracker is a personal project that combines my passion for anime with my web development skills. The app allows users to track their favorite series, receive updates on new episodes, and discover new shows based on their preferences.",
+        "highlights": [
+          "Built a responsive web application using React and TypeScript for a seamless user experience",
+          "Integrated the Jikan API to fetch anime data and provide real-time updates on new episodes",
+          "Designed an intuitive UI with a focus on user-friendly navigation and personalized recommendations"
+        ]
+      },
+      "expense-gov": {
+        "title": "Expense Gov",
+        "description": "A data visualization tool that transforms complex government spending data into accessible insights for citizens.",
+        "linkText": "Live Demo",
+        "contribution": [
+          "Frontend Development",
+          "UI/UX Design",
+          "Data Visualization"
+        ],
+        "overview": "Expense Gov makes government spending data accessible through intuitive visualizations. Built during my web development studies, this project focuses on transforming complex financial data into clear, actionable insights.",
+        "highlights": [
+          "Developed an intuitive interface for exploring government spending data using Next.js and Shadcn",
+          "Implemented interactive charts and graphs to visualize expense patterns across different years",
+          "Integrated real-time data from the Codante API to ensure accuracy and relevance"
+        ]
+      },
+      "dolly-rebrand": {
+        "title": "Dolly Rebrand",
+        "description": "A conceptual rebranding project exploring modern design solutions for a classic Brazilian soda brand.",
+        "linkText": "View Design",
+        "contribution": [
+          "Brand Design",
+          "UI Design",
+          "Visual Identity"
+        ],
+        "overview": "As part of my design coursework at Fatec Rubens Lara, I explored the challenge of modernizing a beloved Brazilian brand while preserving its core identity and cultural significance.",
+        "highlights": [
+          "Created a modernized visual identity system that respects the brand's heritage",
+          "Designed new packaging concepts focusing on premium aesthetics and shelf appeal",
+          "Developed a cohesive digital design system in Figma for consistent brand expression"
+        ]
+      }
     }
-}
+  }

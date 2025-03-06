@@ -2,18 +2,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { projects } from '@/app/[locale]/data/projects'
+import { getTranslations } from "next-intl/server";
+
 
 interface ProjectDetailProps {
   params: {
+    locale: string,
     slug: string
   }
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug
-  }))
+  const locales = ['en', 'pt']
+  const paths = []
+  
+  for (const locale of locales) {
+    const getProjects = projects
+    const localePaths = projects.map((project) => ({
+      locale,
+      slug: project.slug
+    }))
+    paths.push(...localePaths)
+  }
+  
+  return paths
 }
+
 
 export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const { slug } = await params
@@ -23,12 +37,14 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
     return <div>Project not found</div>
   }
 
+  const t = await getTranslations('Project');
+
   return (
     <main className="max-w-4xl mx-auto px-6 dark:text-slate-200">
       <nav className="flex items-center gap-4 mb-10 text-sm">
         <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
           <ArrowLeft size={16} />
-          BACK
+          {t("back")}
         </Link>
       </nav>
 

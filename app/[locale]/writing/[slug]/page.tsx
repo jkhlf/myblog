@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
 interface BlogPost {
   id: string
@@ -28,6 +29,7 @@ const posts: Record<string, BlogPost> = {
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = posts[slug]
+  const t = await getTranslations('WritingPage');
 
   if (!post) {
     return <div>Post not found</div>
@@ -41,7 +43,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="inline-flex items-center gap-2 text-sm hover:text-gray-600"
         >
           <ArrowLeft size={16} />
-          BACK
+          {t('back') || 'BACK'}
         </Link>
       </div>
 

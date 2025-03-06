@@ -1,20 +1,35 @@
 {
     "Principal": {
-      "title": "Hey, I'm Khalaf.",
-      "welcome": {
-        "title": "Welcome to the home page"
-      },
-      "contact": "Go to the contact page"
+        "title": "Khalaf, João. Pleasure to meet you!",
+        "description": "Software Developer with practical experience in web and mobile applications. I work with technologies such as JavaScript, React, TypeScript, Node.js, and Java, always focused on delivering measurable results and following agile methodologies. My main goal is to become a great professional.",
+        "funny": "Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike."
     },
-    "contactForm": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Submit"
+    "Navigation": {
+        "work": "/WORK",
+        "writing": "/WRITING",
+        "about": "/ABOUT"
     },
-    "validation": {
-      "invalid": "Email invalid",
-      "required": "Name required",
-      "min": "Message required to be at least 10 characters"
+    "HomePage": {
+        "featuredWork": "Featured Work",
+        "viewAllWorks": "View all works"
+    },
+    "WritingPage": {
+        "title": "Writing.",
+        "comingSoon": "One day I will have enough knowledge to write an article :)",
+        "back": "BACK"
+    },
+    "WorksPage": {
+        "back": "BACK",
+        "allWorks": "ALL WORKS"
+    },
+    "AboutPage": {
+        "title": "About Me",
+        "bio": {
+            "part1": "I am a FullStack Developer and Internet Systems student at Fatec - RL, currently working as an intern and honing my skills in building solutions.",
+            "part2": "I'm going for the second year in a row as a Data Structure Monitor at college, it's been a great experience. Personally, I think I'm good at teaching, but that's something for the very distant future.",
+            "part3": "I have a growing interest in Data Analysis. My future goal is to work with Artificial Intelligence and Machine Learning, with the prospect of turning my professional trajectory towards the area of ​​data analysis."
+        },
+        "downloadResume": "Download Resume",
+        "experience": "Experience"
     }
-  }
+}

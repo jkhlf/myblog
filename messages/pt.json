@@ -1,7 +1,35 @@
 {
-    "Principal": {
-      "title": "Khalaf, João. Prazer!",
-      "description": "Software Developer com experiência prática em aplicações web e mobile. Trabalho com tecnologias como JavaScript, React, TypeScript, Node.js e Java, sempre focado em entregar resultados mensuráveis e seguindometodologias ágeis. Meu principal objetivo é me tornar um grande profissional.",
-      "funny": "Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike."
-    }
+  "Principal": {
+    "title": "Khalaf, João. Prazer!",
+    "description": "Software Developer com experiência prática em aplicações web e mobile. Trabalho com tecnologias como JavaScript, React, TypeScript, Node.js e Java, sempre focado em entregar resultados mensuráveis e seguindo metodologias ágeis. Meu principal objetivo é me tornar um grande profissional.",
+    "funny": "Fora do trabalho, você me encontrará na academia ou jogando, 90% das vezes jogando TFT ou soulslike."
+  },
+  "Navigation": {
+    "work": "/TRABALHOS",
+    "writing": "/ARTIGOS",
+    "about": "/SOBRE"
+  },
+  "HomePage": {
+    "featuredWork": "Trabalhos em Destaque",
+    "viewAllWorks": "Ver todos os trabalhos"
+  },
+  "WritingPage": {
+    "title": "Artigos.",
+    "comingSoon": "Um dia terei conhecimento suficiente para escrever um artigo :)",
+    "back": "VOLTAR"
+  },
+  "WorksPage": {
+    "back": "VOLTAR",
+    "allWorks": "TODOS OS TRABALHOS"
+  },
+  "AboutPage": {
+    "title": "Sobre Mim",
+    "bio": {
+      "part1": "Sou Desenvolvedor FullStack e estudante de Sistemas para Internet na Fatec - RL, atualmente trabalhando como estagiário e aprimorando minhas habilidades na construção de soluções.",
+      "part2": "Estou indo pelo segundo ano consecutivo como Monitor de Estrutura de Dados na faculdade, tem sido uma ótima experiência. Particularmente, acho que sou bom em ensinar, mas isso é algo para um futuro muito distante.",
+      "part3": "Tenho um interesse crescente em Análise de Dados. Meu objetivo futuro é trabalhar com Inteligência Artificial e Machine Learning, com a perspectiva de direcionar minha trajetória profissional para a área de análise de dados."
+    },
+    "downloadResume": "Baixar Currículo",
+    "experience": "Experiência"
   }
+}

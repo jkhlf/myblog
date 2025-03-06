@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
 interface BlogPost {
   id: string
@@ -16,17 +17,19 @@ const posts: BlogPost[] = [
   },
 ]
 
-export default function WritingPage() {
+export default async function WritingPage() {
+  const t = await getTranslations('WritingPage');
+  
   return (
     <main className="max-w-2xl mx-auto space-y-16">
       <div>
-        <h1 className="text-4xl font-normal mb-10">Writing.</h1>
-        <p className='text-xs text-slate-500 mb-10'>One day I will have enough knowledge to write an article :)</p>
+        <h1 className="text-4xl font-normal mb-10">{t('title')}</h1>
+        <p className='text-xs text-slate-500 mb-10'>{t('comingSoon')}</p>
         <div className="space-y-6">
           {posts.map((post) => (
             <Link 
               key={post.id}
-              href={`/writing/${post.slug}`}
+              href={{ pathname: '/writing/[slug]', params: { slug: post.slug } }}
               className="group flex justify-between items-baseline border-b border-gray-100 pb-6"
             >
               <div className="flex gap-4">

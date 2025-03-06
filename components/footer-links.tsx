@@ -1,5 +1,5 @@
 import React from 'react'
-import { siteConfig } from '@/app/site-config'
+import { siteConfig } from '@/app/[locale]/site-config'
 
 function FooterLinks() {
   return (

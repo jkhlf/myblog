@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeToggle } from './theme-toggle'
+import LocaleSwitcher from './locale-switcher'
 
 function NavLinks() {
   return (
@@ -13,6 +14,7 @@ function NavLinks() {
               <a href="/writing" className="hover:text-gray-600 text-sm  px-2 py-1">/WRITING</a>
               <a href="/about" className="hover:text-gray-600 text-sm  px-2 py-1">/ABOUT</a>
             </div>
+        <LocaleSwitcher />
           </nav>
   )
 }

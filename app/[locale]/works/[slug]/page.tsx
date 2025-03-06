@@ -1,119 +1,121 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowLeft, Calendar, Clock } from 'lucide-react'
+import { ArrowLeft, Globe } from 'lucide-react'
 import { projects } from '@/app/[locale]/data/projects'
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
-interface ProjectDetailProps {
-  params: {
-    slug: string
-  }
-}
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug
-  }))
-}
-
-export default async function ProjectDetail({ params }: ProjectDetailProps) {
-  const { slug } = await params
-  const project = projects.find(p => p.slug === slug)
-
+export default async function ProjectDetailsPage({ 
+  params 
+}: { 
+  params: { slug: string }
+}) {
+  const t = await getTranslations('WorksPage');
+  const projectT = await getTranslations('Project');
+  
+  const project = projects.find(p => p.slug === params.slug);
+  
   if (!project) {
-    return <div>Project not found</div>
+    notFound();
   }
 
   return (
-    <main className="max-w-4xl mx-auto px-6 dark:text-slate-200">
-      <nav className="flex items-center gap-4 mb-10 text-sm">
-        <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
+    <main className="max-w-4xl mx-auto">
+      <div className="mb-12">
+        <Link 
+          href="/works"
+          className="inline-flex items-center gap-2 text-sm hover:text-gray-600"
+        >
           <ArrowLeft size={16} />
-          BACK
+          {t('back')}
         </Link>
-      </nav>
-
-      <article className="space-y-16">
-        <header className="space-y-8">
-          <div className="space-y-2">
-            <div className="flex items-center gap-4 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <Calendar size={16} />
-                <span>{project.year}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock size={16} />
-                <span>{project.duration}</span>
+      </div>
+      
+      <div className="space-y-12">
+        <div>
+          <h1 className="text-4xl font-normal mb-4">{project.title}</h1>
+          <p className="text-xl text-gray-600 mb-8">{project.description}</p>
+          
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div>
+              <h3 className="text-sm text-gray-500 mb-1">{projectT('year')}</h3>
+              <p>{project.year}</p>
+            </div>
+            <div>
+              <h3 className="text-sm text-gray-500 mb-1">{projectT('duration')}</h3>
+              <p>{project.duration}</p>
+            </div>
+            <div className="col-span-2">
+              <h3 className="text-sm text-gray-500 mb-1">{projectT('tags')}</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="bg-gray-100 px-2 py-0.5 text-sm rounded">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-            <h1 className="text-4xl font-normal">{project.title}</h1>
-          </div>
-          <p className="text-lg text-gray-600 max-w-2xl">{project.description}</p>
-        </header>
-
-        <div className="bg-gradient-to-b from-gray-100 to-white p-1 rounded-xl">
-          <div className="aspect-video relative rounded-lg overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
-
-        <section className="grid md:grid-cols-[200px,1fr] gap-8">
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">CONTRIBUTION</h2>
-              <ul className="space-y-2">
-                {project.contribution.map((item, i) => (
-                  <li key={i} className="text-sm">{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">TECH STACK</h2>
-              <ul className="flex flex-wrap gap-2">
-                {project.tags.map((tag, i) => (
-                  <li key={i} className="text-sm px-3 py-1 bg-gray-100 rounded-full dark:text-black">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        
+        <div className="relative aspect-video rounded-md overflow-hidden">
+          <Image 
+            src={project.image} 
+            alt={project.title} 
+            fill 
+            className="object-cover"
+            priority 
+          />
+        </div>
+        
+        {project.secondImage && (
+          <div className="relative aspect-video rounded-md overflow-hidden">
+            <Image 
+              src={project.secondImage} 
+              alt={`${project.title} additional image`} 
+              fill 
+              className="object-cover" 
+            />
+          </div>
+        )}
+        
+        <div className="grid md:grid-cols-[1fr,2fr] gap-8">
+          <div>
+            <h2 className="text-xl font-medium mb-4">{projectT('contribution')}</h2>
+            <ul className="space-y-2">
+              {project.contribution.map((item, i) => (
+                <li key={i} className="text-gray-600">• {item}</li>
+              ))}
+            </ul>
+            
             {project.link && (
-              <div>
-                <h2 className="text-sm font-mono text-gray-400 mb-4">LINKS</h2>
-                <Link 
-                  href={project.link} 
-                  target="_blank"
-                  className="text-sm underline hover:text-gray-600"
-                >
-                  {project.linkText}
-                </Link>
-              </div>
+              <a 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 text-primary hover:underline"
+              >
+                <Globe size={16} />
+                {project.linkText || projectT('viewProject')}
+              </a>
             )}
           </div>
-
-          <div className="space-y-12">
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">OVERVIEW</h2>
-              <p className="text-gray-600">{project.overview}</p>
-            </div>
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">HIGHLIGHTS</h2>
-              <ul className="space-y-4">
-                {project.highlights.map((highlight, i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="text-slate-200">→</span>
-                    <span className="text-gray-600 dark:text-slate-200">{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          
+          <div>
+            <h2 className="text-xl font-medium mb-4">{projectT('overview')}</h2>
+            <p className="text-gray-600 mb-8">{project.overview}</p>
+            
+            <h2 className="text-xl font-medium mb-4">{projectT('highlights')}</h2>
+            <ul className="space-y-4">
+              {project.highlights.map((item, i) => (
+                <li key={i} className="text-gray-600">
+                  <span className="font-medium text-foreground">0{i + 1}.</span> {item}
+                </li>
+              ))}
+            </ul>
           </div>
-        </section>
-      </article>
+        </div>
+      </div>
     </main>
   )
 }

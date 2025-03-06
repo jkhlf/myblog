@@ -1,8 +1,11 @@
-import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { projects } from '@/app/[locale]/data/projects'
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 
-export default function WorksPage() {
+export default async function WorksPage() {
+  const t = await getTranslations('WorksPage');
+
   return (
     <main className="max-w-4xl mx-auto">
       <div className="flex items-center gap-4 mb-12">
@@ -11,16 +14,16 @@ export default function WorksPage() {
           className="flex items-center gap-2 text-sm hover:text-gray-600"
         >
           <ArrowLeft size={16} />
-          BACK
+          {t('back')}
         </Link>
-        <span className="text-sm border rounded-md px-3 py-1">ALL WORKS</span>
+        <span className="text-sm border rounded-md px-3 py-1">{t('allWorks')}</span>
       </div>
 
       <div className="space-y-6">
         {projects.map((project) => (
           <Link
             key={project.id}
-            href={`/works/${project.slug}`}
+            href={{ pathname: '/works/[slug]', params: { slug: project.slug } }}
             className="group flex items-baseline"
           >
             <span className="text-gray-400 w-12 font-mono">{project.id}</span>
@@ -32,8 +35,6 @@ export default function WorksPage() {
           </Link>
         ))}
       </div>
-
-      
     </main>
   )
 }

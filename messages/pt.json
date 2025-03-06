@@ -22,6 +22,15 @@
     "back": "VOLTAR",
     "allWorks": "TODOS OS TRABALHOS"
   },
+  "Project": {
+    "year": "Ano",
+    "duration": "Duração",
+    "tags": "Tecnologias",
+    "contribution": "Minha Contribuição",
+    "overview": "Visão Geral",
+    "highlights": "Destaques",
+    "viewProject": "Ver Projeto"
+  },
   "AboutPage": {
     "title": "Sobre Mim",
     "bio": {

@@ -4,19 +4,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ExternalLink } from 'lucide-react'
-import Link from 'next/link'
+import { Project } from '@/app/[locale]/data/projects'
+import { Link } from '@/i18n/routing'
 
 interface ProjectCardProps {
-  project: {
-    id: string
-    slug: string
-    title: string
-    description: string
-    year: number
-    image: string
-    tags: string[]
-    color?: string
-  }
+  project: Project
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -31,7 +23,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <Link href={`/works/${project.slug}`} className="block">
+      <Link 
+        href={{ 
+          pathname: "/works", 
+          query: { slug: project.slug } 
+        }} 
+        className="block"
+      >
         <div className="aspect-[16/9] relative overflow-hidden">
           <Image
             src={project.image}

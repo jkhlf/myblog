@@ -22,6 +22,15 @@
         "back": "BACK",
         "allWorks": "ALL WORKS"
     },
+    "Project": {
+        "year": "Year",
+        "duration": "Duration",
+        "tags": "Technologies",
+        "contribution": "My Contribution",
+        "overview": "Overview",
+        "highlights": "Highlights",
+        "viewProject": "View Project"
+    },
     "AboutPage": {
         "title": "About Me",
         "bio": {

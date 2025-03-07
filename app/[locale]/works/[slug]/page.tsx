@@ -36,6 +36,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   }
 
   const t = await getTranslations('Project');
+  const tproject = await getTranslations(`Projects.${project.slug}`);
 
   return (
     <main className="max-w-4xl mx-auto px-6 dark:text-slate-200">
@@ -59,9 +60,9 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
                 <span>{project.duration}</span>
               </div>
             </div>
-            <h1 className="text-4xl font-normal">{project.title}</h1>
+            <h1 className="text-4xl font-normal">{tproject('title') || project.title}</h1>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl">{project.description}</p>
+          <p className="text-lg text-gray-600 max-w-2xl">{tproject('description') || project.description}</p>
         </header>
 
         <div className="bg-gradient-to-b from-gray-100 to-white p-1 rounded-xl">
@@ -82,11 +83,15 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
                 {t('contribution')} 
               </h2>
               <ul className="space-y-2">
-                {project.contribution.map((item, i) => (
-                  <li key={i} className="text-sm">
-                    {item}
-                  </li>
-                ))}
+                {project.contribution.map((item, i) => {
+                  // Use indexed key pattern instead of array indexing
+                  const translatedContribution = tproject(`contribution_${i}`);
+                  return (
+                    <li key={i} className="text-sm">
+                      {translatedContribution || item}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div>
@@ -115,7 +120,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
                   rel="noopener noreferrer"
                   className="text-sm underline hover:text-gray-600"
                 >
-                  {project.linkText}
+                  {tproject('linkText') || project.linkText}
                 </a>
               </div>
             )}
@@ -126,21 +131,25 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
               <h2 className="text-sm font-mono text-gray-400 mb-4">
                 {t('overview')} 
               </h2>
-              <p className="text-gray-600">{project.overview}</p>
+              <p className="text-gray-600">{tproject('overview') || project.overview}</p>
             </div>
             <div>
               <h2 className="text-sm font-mono text-gray-400 mb-4">
                 {t('highlights')}
               </h2>
               <ul className="space-y-4">
-                {project.highlights.map((highlight, i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="text-slate-200">→</span>
-                    <span className="text-gray-600 dark:text-slate-200">
-                      {highlight}
-                    </span>
-                  </li>
-                ))}
+                {project.highlights.map((highlight, i) => {
+                  // Use indexed key pattern instead of array indexing
+                  const translatedHighlight = tproject(`highlights_${i}`);
+                  return (
+                    <li key={i} className="flex gap-4">
+                      <span className="text-slate-200">→</span>
+                      <span className="text-gray-600 dark:text-slate-200">
+                        {translatedHighlight || highlight}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

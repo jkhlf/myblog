@@ -30,6 +30,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const post = posts[slug]
   const t = await getTranslations('WritingPage');
+  
 
   if (!post) {
     return <div>Post not found</div>

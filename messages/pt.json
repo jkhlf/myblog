@@ -1,7 +1,7 @@
 {
   "Principal": {
-    "title": "Khalaf, João. Prazer!",
-    "description": "Software Developer com experiência prática em aplicações web e mobile. Trabalho com tecnologias como JavaScript, React, TypeScript, Node.js e Java, sempre focado em entregar resultados mensuráveis e seguindo metodologias ágeis. Meu principal objetivo é me tornar um grande profissional.",
+    "title": "Khalaf, João.",
+    "description": "Desenvolvedor de software com experiência prática em aplicações web e mobile. Trabalho com tecnologias como JavaScript, React, TypeScript, Node.js e Java, sempre focado em entregar resultados mensuráveis ​​e aplicações escalaveis.",
     "funny": "Fora do trabalho, você me encontrará na academia ou jogando, 90% das vezes jogando TFT ou soulslike."
   },
   "Navigation": {
@@ -38,8 +38,8 @@
     "title": "Sobre Mim",
     "bio": {
       "part1": "Sou Desenvolvedor FullStack e estudante de Sistemas para Internet na Fatec - RL, atualmente trabalhando como estagiário e aprimorando minhas habilidades na construção de soluções.",
-      "part2": "Estou indo pelo segundo ano consecutivo como Monitor de Estrutura de Dados na faculdade, tem sido uma ótima experiência. Particularmente, acho que sou bom em ensinar, mas isso é algo para um futuro muito distante.",
-      "part3": "Tenho um interesse crescente em Análise de Dados. Meu objetivo futuro é trabalhar com Inteligência Artificial e Machine Learning, com a perspectiva de direcionar minha trajetória profissional para a área de análise de dados."
+      "part2": "Duas vezes Monitor de Estrutura de Dados na minha faculdade, desenvolvi fortes capacidades de mentoria e habilidades de comunicação técnica. Essa experiência fortaleceu minha capacidade de explicar conceitos complexos claramente e colaborar efetivamente dentro de equipes de desenvolvimento.",
+      "part3": "Além da minha experiência atual em full-stack, estou expandindo minhas habilidades em Análise de Dados, com uma trajetória de carreira voltada para Inteligência Artificial e Aprendizado de Máquina. Penso em direcionar minha carreira para esta área, com tantas tecnologias é sempre bom estar preparado para novos desafios."
     },
     "downloadResume": "Baixar Currículo",
     "experience": "Experiência"
@@ -47,51 +47,39 @@
   "Projects": {
     "anime-tracker": {
       "title": "Anime Tracker",
-      "description": "Uma aplicação web que ajuda os usuários a acompanharem suas séries de anime favoritas e descobrir novos shows.",
-      "linkText": "Sem Demo por enquanto",
-      "contribution": [
-        "Desenvolvimento Frontend",
-        "Design UI/UX",
-        "Integração de API"
-      ],
-      "overview": "Anime Tracker é um projeto pessoal que combina minha paixão por anime com minhas habilidades em desenvolvimento web. O aplicativo permite que os usuários acompanhem suas séries favoritas, recebam atualizações sobre novos episódios e descubram novos shows com base em suas preferências.",
-      "highlights": [
-        "Construí uma aplicação web responsiva usando React e TypeScript para uma experiência de usuário fluida",
-        "Integrei a API Jikan para buscar dados de anime e fornecer atualizações em tempo real sobre novos episódios",
-        "Projetei uma UI intuitiva com foco em navegação amigável e recomendações personalizadas"
-      ]
+      "description": "Um aplicativo da web que ajuda os usuários a rastrear suas séries de anime favoritas e descobrir novos programas.",
+      "linkText": "Nenhuma demonstração ao vivo por enquanto",
+      "contribution_0": "Desenvolvimento de front-end de ponta a ponta com React e TypeScript",
+      "contribution_1": "Design de UI/UX",
+      "contribution_2": "Integração de API",
+      "overview": "Anime Tracker é um projeto pessoal que combina minha paixão por anime com minhas habilidades de desenvolvimento web. O aplicativo permite que os usuários rastreiem suas séries favoritas, recebam atualizações sobre novos episódios e descubram novos programas com base em suas preferências.",
+      "highlights_0": "Construí um aplicativo da web responsivo usando React e TypeScript para uma experiência de usuário perfeita",
+      "highlights_1": "Integrei a API Jikan com estratégias eficientes de busca de dados, incluindo mecanismos de cache para otimizar o desempenho e reduzir chamadas de API",
+      "highlights_2": "Implementados recursos focados no usuário, incluindo gerenciamento de lista de observação, recomendações personalizadas e notificações em tempo real."
     },
     "expense-gov": {
       "title": "Expense Gov",
-      "description": "Uma ferramenta de visualização de dados que transforma informações complexas sobre gastos governamentais em insights acessíveis para os cidadãos.",
-      "linkText": "Demo ao Vivo",
-      "contribution": [
-        "Desenvolvimento Frontend",
-        "Design UI/UX",
-        "Visualização de Dados"
-      ],
-      "overview": "Expense Gov torna os dados de gastos governamentais acessíveis por meio de visualizações intuitivas. Construído durante meus estudos de desenvolvimento web, este projeto se concentra em transformar dados financeiros complexos em insights claros e acionáveis.",
-      "highlights": [
-        "Desenvolvi uma interface intuitiva para explorar dados de gastos governamentais usando Next.js e Shadcn",
-        "Implementei gráficos e tabelas interativos para visualizar padrões de despesas ao longo de diferentes anos",
-        "Integrei dados em tempo real da API Codante para garantir precisão e relevância"
-      ]
+      "description": "Uma ferramenta de visualização de dados que transforma dados complexos de gastos do governo em insights acessíveis para os cidadãos.",
+      "linkText": "Demonstração ao vivo",
+      "contribution_0": "Desenvolvimento de front-end",
+      "contribution_1": "Design de UI/UX orientado a dados para visualização de informações complexas",
+      "contribution_2": "Implementação de visualização de dados interativa com recursos de filtragem",
+      "overview": "O Expense Gov torna os dados de gastos do governo acessíveis por meio de visualizações intuitivas. Construído durante meus estudos de desenvolvimento web, este projeto se concentra em transformar dados financeiros complexos em insights claros e acionáveis.",
+      "highlights_0": "Desenvolveu uma interface intuitiva para explorar dados de gastos do governo usando Next.js e Shadcn",
+      "highlights_1": "Projetou e implementou componentes de visualização de dados interativos usando Recharts e React, permitindo que os usuários explorem dados financeiros complexos por meio de filtros personalizáveis",
+      "highlights_2": "Dados em tempo real integrados da API Codante para garantir precisão e relevância"
     },
     "dolly-rebrand": {
-      "title": "Rebranding Dolly",
-      "description": "Um projeto conceitual de rebranding explorando soluções modernas de design para uma marca clássica de refrigerante brasileira.",
-      "linkText": "Ver Design",
-      "contribution": [
-        "Design de Marca",
-        "Design de UI",
-        "Identidade Visual"
-      ],
-      "overview": "Como parte do meu curso de design na Fatec Rubens Lara, explorei o desafio de modernizar uma marca brasileira amada enquanto preservava sua identidade central e significado cultural.",
-      "highlights": [
-        "Criei um sistema de identidade visual modernizado que respeita o patrimônio da marca",
-        "Desenvolvi novos conceitos de embalagem com foco em estética premium e apelo nas prateleiras",
-        "Elaborei um sistema de design digital coeso no Figma para expressão consistente da marca"
-      ]
+      "title": "Rebrand Dolly",
+      "description": "Um projeto conceitual de rebranding explorando soluções de design modernas para uma marca clássica de refrigerantes brasileira.",
+      "linkText": "Ver design",
+      "contribution_0": "Design de marca",
+      "contribution_1": "Design de IU",
+      "contribution_2": "Criação de sistema de design abrangente no Figma",
+      "overview": "Como parte do meu curso de design na Fatec Rubens Lara, explorei o desafio de modernizar uma marca brasileira querida, preservando sua identidade central e significado cultural.",
+      "highlights_0": "Criei um sistema de identidade visual modernizado que respeita a herança da marca",
+      "highlights_1": "Projetei novos conceitos de embalagem com foco em estética premium e apelo de prateleira",
+      "highlights_2": "Desenvolvi um sistema de design digital coeso no Figma para uma marca consistente expressão"
     }
   }
 }

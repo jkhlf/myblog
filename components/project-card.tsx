@@ -25,7 +25,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <Link 
         href={{ 
-          pathname: '/works/[slug]', params: { slug: project.slug }
+          pathname: '/works/[slug]',
+          params: { slug: project.slug }
         }} 
         className="block"
       >

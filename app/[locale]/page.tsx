@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { ProjectCard } from '@/components/project-card'
 import { projects } from '@/app/[locale]/data/projects'
 import { getTranslations } from "next-intl/server";
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation'
 
 export default async function Home() {
   const t = await getTranslations("Principal");

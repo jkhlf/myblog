@@ -3,7 +3,7 @@ import React from 'react'
 import { ThemeToggle } from './theme-toggle'
 import LocaleSwitcher from './locale-switcher'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 
 function NavLinks() {
   const t = useTranslations('Navigation');

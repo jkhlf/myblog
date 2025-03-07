@@ -1,7 +1,7 @@
 import { ArrowLeft } from 'lucide-react'
 import { projects } from '@/app/[locale]/data/projects'
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation'
 
 export default async function WorksPage() {
   const t = await getTranslations('WorksPage');

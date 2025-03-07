@@ -13,17 +13,32 @@ import { notFound } from 'next/navigation'
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Khalaf | Developer',
-  description: 'Full-stack Developer Portfolio',
+  title: `${siteConfig.name} | Developer`,
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  metadataBase: new URL(siteConfig.url),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    creator: '@kh4lf_',
+  },
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}:{
+type Props = {
   children: React.ReactNode;
   params: { locale: Locale };
-}) {
+}
+
+export default async function RootLayout({ children, params,}: Props) {
   const { locale } = await Promise.resolve(params);
   if (!routing.locales.includes(locale as Locale)) {
     notFound();

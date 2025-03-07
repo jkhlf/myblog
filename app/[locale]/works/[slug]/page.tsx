@@ -1,7 +1,7 @@
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { projects } from '@/app/[locale]/data/projects';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image';
 
 interface ProjectDetailProps {

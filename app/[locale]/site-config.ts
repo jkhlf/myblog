@@ -1,6 +1,6 @@
 export const siteConfig = {
     name: "João Khalaf",
-    description : "Full-stack developer specializing in web applications and user interfaces.",
+    description : "Software Developer specializing in web applications and user interfaces.",
     url: "https://me-jkhlf.vercel.app",
     links: {
         github: "https://github.com/jkhlf",
@@ -11,8 +11,10 @@ export const siteConfig = {
     keywords: [
         "João Khalaf",
         "Web Developer",
-        "Full-stack Developer",
+        "Software Developer",
         "Software Engineer",
+        "Frontend Developer",
+        "Backend Developer",
         "React Developer",
         "Next.js Developer",
         "TypeScript",

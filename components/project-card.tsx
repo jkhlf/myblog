@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ExternalLink } from 'lucide-react'
 import { Project } from '@/app/[locale]/data/projects'
-import { Link } from '@/i18n/routing'
+import { Link } from '@/i18n/navigation'
 
 interface ProjectCardProps {
   project: Project

@@ -10,30 +10,48 @@ interface BlogPost {
   content: React.ReactNode
 }
 
-const posts: Record<string, BlogPost> = {
-  'one-day': {
-    id: "001",
-    slug: "one-day",
-    title: ":)",
-    date: "01-20-2025",
-    content: (
-      <>
-        <p>One day I will have enough knowledge to write an article :)</p>
-        <p className='py-5'>Until then, here's a picture of a cat.</p>
-        <img src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='' />
-      </>
-    )
+const posts: Record<string, Record<string, BlogPost>> = {
+  'en': {
+    'one-day': {
+      id: "001",
+      slug: "one-day",
+      title: "One Day",
+      date: "01-20-2025",
+      content: (
+        <>
+          <p>One day I will have enough knowledge to write an article :)</p>
+          <p className='py-5'>Until then, here's a picture of a cat.</p>
+          <img src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='A cat' />
+        </>
+      )
+    },
   },
+  'pt': {
+    'one-day': {
+      id: "001",
+      slug: "one-day",
+      title: "Um Dia",
+      date: "20-01-2025",
+      content: (
+        <>
+          <p>Um dia terei conhecimento suficiente para escrever um artigo :)</p>
+          <p className='py-5'>Até lá, aqui está uma foto de um gato.</p>
+          <img src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='Um gato' />
+        </>
+      )
+    },
+  }
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const post = posts[slug]
+export default async function BlogPost({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+  const { slug, locale } = await params
   const t = await getTranslations('WritingPage');
   
+  const localePosts = posts[locale] || posts['en'];
+  const post = localePosts[slug];
 
   if (!post) {
-    return <div>Post not found</div>
+    return <div>{locale === 'pt' ? 'Artigo não encontrado' : 'Post not found'}</div>
   }
 
   return (
@@ -44,7 +62,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="inline-flex items-center gap-2 text-sm hover:text-gray-600"
         >
           <ArrowLeft size={16} />
-          {t('back') || 'BACK'}
+          {t('back')}
         </Link>
       </div>
 

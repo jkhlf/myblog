@@ -8,17 +8,29 @@ interface BlogPost {
   date: string
 }
 
-const posts: BlogPost[] = [
-  {
-    id: "001",
-    slug: "one-day",
-    title: "Cat",
-    date: "11-23-2024"
-  },
-]
+const posts: Record<string, BlogPost[]> = {
+  'en': [
+    {
+      id: "001",
+      slug: "one-day",
+      title: "One Day",
+      date: "01-20-2025"
+    },
+  ],
+  'pt': [
+    {
+      id: "001",
+      slug: "one-day",
+      title: "Um Dia",
+      date: "20-01-2025"
+    },
+  ]
+}
 
-export default async function WritingPage() {
+export default async function WritingPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations('WritingPage');
+  const localePosts = posts[locale] || posts['en']; 
   
   return (
     <main className="max-w-2xl mx-auto space-y-16">
@@ -26,7 +38,7 @@ export default async function WritingPage() {
         <h1 className="text-4xl font-normal mb-10">{t('title')}</h1>
         <p className='text-xs text-slate-500 mb-10'>{t('comingSoon')}</p>
         <div className="space-y-6">
-          {posts.map((post) => (
+          {localePosts.map((post) => (
             <Link 
               key={post.id}
               href={{ pathname: '/writing/[slug]', params: { slug: post.slug } }}

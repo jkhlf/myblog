@@ -8,7 +8,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div className='flex items-center mx-6'>
-      <Globe className='h-4 w-4 text-muted-foreground' />
+      <Globe className='h-4 w-4 text-muted-foreground mx-2' />
       <LocaleSwitcherSelect defaultValue={locale} label='Select a locale'>
         {routing.locales.map((cur) => (
           <option key={cur} value={cur}>

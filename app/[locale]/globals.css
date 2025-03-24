@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -23,7 +23,7 @@
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -49,11 +49,22 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground relative;
+
+  }
+
+  body::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
+    background-image: url("/imgs/noise.png");
+    background-repeat: repeat;
+    opacity: 0.07; /* controla a intensidade do ruído */
   }
 }
 
+/* Exemplo de uso do dark mode em <p> */
 p {
-  @apply dark:text-slate-200
+  @apply dark:text-slate-200;
 }

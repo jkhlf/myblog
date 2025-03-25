@@ -19,7 +19,7 @@ export const metadata = {
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'pt-br',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,

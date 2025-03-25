@@ -1,6 +1,6 @@
 export const siteConfig = {
     name: "João Khalaf",
-    description : "Software Developer specializing in web applications and user interfaces.",
+    description : "Software Developer specializing in web applications. Cybersecurity enthusiast.",
     url: "https://me-jkhlf.vercel.app",
     links: {
         github: "https://github.com/jkhlf",

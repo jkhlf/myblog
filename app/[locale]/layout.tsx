@@ -13,7 +13,7 @@ import { notFound } from 'next/navigation'
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata = {
-  title: `${siteConfig.name} | Developer`,
+  title: `${siteConfig.name}`,
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   metadataBase: new URL(siteConfig.url),

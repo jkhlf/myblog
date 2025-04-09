@@ -48,7 +48,7 @@ export default async function RootLayout({ children, params,}: Props) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${jetbrainsMono.className} antialiased min-h-screen bg-background text-foreground`}>
+      <body suppressHydrationWarning className={`${jetbrainsMono.className} antialiased min-h-screen bg-background text-foreground`}>
         <ThemeProvider defaultTheme="light" attribute="class">
           <CursorEffect />
           <div className="max-w-3xl mx-auto px-4 py-8">

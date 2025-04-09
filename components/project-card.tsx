@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, ExternalLink } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { Project } from '@/app/[locale]/data/projects'
 import { Link } from '@/i18n/navigation'
 

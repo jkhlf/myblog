@@ -4,6 +4,7 @@ export interface Project {
   title: string
   description: string
   year: number
+  role: string
   image: string
   secondImage?: string
   tags: string[]
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     slug: "anime-tracker",
     title: "Anime Tracker",
     year: 2025,
+    role: "Developer",
     description: "A web application that helps users track their favorite anime series and discover new shows.",
     image: "/imgs/tracker.png",
     link: "/",
@@ -41,6 +43,7 @@ export const projects: Project[] = [
     slug: "expense-gov",
     title: "Expense Gov",
     year: 2024,
+    role: "Developer",
     description: "A data visualization tool that transforms complex government spending data into accessible insights for citizens.",
     image: "/imgs/expenses.png",
     link: "https://expenses-gov.vercel.app/",
@@ -60,6 +63,7 @@ export const projects: Project[] = [
     slug: "dolly-rebrand",
     title: "Dolly Rebrand",
     year: 2023,
+    role: "Ux Designer",
     description: "A conceptual rebranding project exploring modern design solutions for a classic Brazilian soda brand.",
     image: "/imgs/dolly.png",
     tags: ["Design", "Figma", "Branding"],

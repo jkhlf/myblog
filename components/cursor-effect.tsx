@@ -34,7 +34,7 @@ export function CursorEffect() {
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
       backgroundColor: "white",
-      mixBlendMode: "difference" as any,
+      mixBlendMode: "difference" as const,
       opacity: 1
     }
   }

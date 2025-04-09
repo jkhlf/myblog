@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation'
+import Image from 'next/image';
 
 interface BlogPost {
   id: string
@@ -20,8 +21,8 @@ const posts: Record<string, Record<string, BlogPost>> = {
       content: (
         <>
           <p>One day I will have enough knowledge to write an article :)</p>
-          <p className='py-5'>Until then, here's a picture of a cat.</p>
-          <img src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='A cat' />
+          <p className='py-5'>Until then, here&apos;s a picture of a cat.</p>
+          <Image width={50} height={50} src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='A cat' />
         </>
       )
     },
@@ -36,15 +37,22 @@ const posts: Record<string, Record<string, BlogPost>> = {
         <>
           <p>Um dia terei conhecimento suficiente para escrever um artigo :)</p>
           <p className='py-5'>Até lá, aqui está uma foto de um gato.</p>
-          <img src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='Um gato' />
+          <Image  width={250} height={250} src='https://images.unsplash.com/photo-1716467891152-1b43a96de578?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D' alt='Um gato' />
         </>
       )
     },
   }
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string, locale: string }> }) {
-  const { slug, locale } = await params
+interface BlogPostProps {
+  params: Promise<{
+    slug: string;
+    locale: string;
+  }>;
+}
+
+export default async function BlogPost({ params }: BlogPostProps ) {
+  const { slug, locale } = await params;
   const t = await getTranslations('WritingPage');
   
   const localePosts = posts[locale] || posts['en'];

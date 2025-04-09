@@ -1,22 +1,20 @@
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { projects } from '@/app/[locale]/data/projects';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image';
 
-interface ProjectDetailProps {
-  params: {
-    locale: string;
-    slug: string;
-  };
-}
+
+type Params = {
+  locale: string;
+  slug: string;
+};
 
 export async function generateStaticParams() {
   const locales = ['en', 'pt'];
   const paths = [];
 
   for (const locale of locales) {
-    const getProjects = projects;
     const localePaths = projects.map((project) => ({
       locale,
       slug: project.slug,
@@ -25,6 +23,10 @@ export async function generateStaticParams() {
   }
 
   return paths;
+}
+
+interface ProjectDetailProps {
+  params: Promise<Params>;
 }
 
 export default async function ProjectDetail({ params }: ProjectDetailProps) {
@@ -58,6 +60,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
               <div className="flex items-center gap-2">
                 <Clock size={16} />
                 <span>{project.duration}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <User size={16} />
+                <span>{project.role}</span>
               </div>
             </div>
             <h1 className="text-4xl font-normal">{tproject('title') || project.title}</h1>

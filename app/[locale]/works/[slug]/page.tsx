@@ -1,9 +1,9 @@
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { projects } from '@/app/[locale]/data/projects';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation'
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
-
+import SideNavigation from '@/components/side-navigation';
 
 type Params = {
   locale: string;
@@ -40,127 +40,139 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const t = await getTranslations('Project');
   const tproject = await getTranslations(`Projects.${project.slug}`);
 
+  // Definição dos itens de navegação
+  const navItems = [
+    { label: t('overview'), targetId: 'overview' },
+    { label: t('highlights'), targetId: 'highlights' },
+    { label: t('contribution'), targetId: 'contribution' },
+    { label: t('techStack'), targetId: 'tech-stack' }
+  ];
+
   return (
-    <main className="max-w-4xl mx-auto px-6 dark:text-slate-200">
-      <nav className="flex items-center gap-4 mb-10 text-sm">
-        <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
-          <ArrowLeft size={16} />
-          {t('back')}
-        </Link>
-      </nav>
+    <div className="relative flex">
+      {/* Navegação lateral fixa no canto esquerdo */}
+      <div className="fixed left-8 top-[28%] z-10 hidden lg:block">
+        <SideNavigation items={navItems} />
+      </div>
+      
+      {/* Conteúdo principal centralizado */}
+      <main className="px-6 dark:text-slate-100 w-full">
+        <nav className="flex items-center gap-4 mb-10 text-sm">
+          <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
+            <ArrowLeft size={16} />
+            {t('back')}
+          </Link>
+        </nav>
 
-      <article className="space-y-16">
-        <header className="space-y-8">
-          <div className="space-y-2">
-            <div className="flex items-center gap-4 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <Calendar size={16} />
-                <span>{project.year}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock size={16} />
-                <span>{project.duration}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <User size={16} />
-                <span>{project.role}</span>
+        <article className="space-y-16">
+          <header className="space-y-8 text-center">
+          <h1 className="text-4xl font-normal">{tproject('title') || project.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl dark:text-slate-300">{tproject('description') || project.description}</p>
+
+            <div className="space-y-2">
+              <div className="flex items-center  justify-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <Calendar size={16} />
+                  <span>{project.year}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock size={16} />
+                  <span>{project.duration}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User size={16} />
+                  <span>{project.role}</span>
+                </div>
               </div>
             </div>
-            <h1 className="text-4xl font-normal">{tproject('title') || project.title}</h1>
-          </div>
-          <p className="text-lg text-gray-600 max-w-2xl">{tproject('description') || project.description}</p>
-        </header>
+          </header>
 
-        <div className="bg-gradient-to-b from-gray-100 to-white p-1 rounded-xl">
-          <div className="aspect-video relative rounded-lg overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <section className="grid md:grid-cols-[200px,1fr] gap-8">
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">
-                {t('contribution')} 
-              </h2>
-              <ul className="space-y-2">
-                {project.contribution.map((item, i) => {
-                  // Use indexed key pattern instead of array indexing
-                  const translatedContribution = tproject(`contribution_${i}`);
-                  return (
-                    <li key={i} className="text-sm">
-                      {translatedContribution || item}
-                    </li>
-                  );
-                })}
-              </ul>
+          <div className="bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 p-1 rounded-xl">
+            <div className="aspect-video relative rounded-lg overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
             </div>
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">
-                {t('techStack')} 
-              </h2>
-              <ul className="flex flex-wrap gap-2">
-                {project.tags.map((tag, i) => (
-                  <li
-                    key={i}
-                    className="text-sm px-3 py-1 bg-gray-100 rounded-full dark:text-black"
-                  >
-                    {tag}
+          </div>
+
+          <section id="overview" className="pt-4">
+            <h2 className="text-sm font-mono text-gray-400 mb-4">
+              {t('overview')} 
+            </h2>
+            <p className="text-gray-600 dark:text-slate-300">{tproject('overview') || project.overview}</p>
+          </section>
+
+          <section id="highlights" className="pt-4">
+            <h2 className="text-sm font-mono text-gray-400 mb-4">
+              {t('highlights')}
+            </h2>
+            <ul className="space-y-4">
+              {project.highlights.map((highlight, i) => {
+                const translatedHighlight = tproject(`highlights_${i}`);
+                return (
+                  <li key={i} className="flex gap-4">
+                    <span className="text-slate-500 dark:text-slate-400">→</span>
+                    <span className="text-gray-600 dark:text-slate-300">
+                      {translatedHighlight || highlight}
+                    </span>
                   </li>
-                ))}
-              </ul>
-            </div>
-            {project.link && (
-              <div>
-                <h2 className="text-sm font-mono text-gray-400 mb-4">
-                  {t('links')} 
-                </h2>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm underline hover:text-gray-600"
-                >
-                  {tproject('linkText') || project.linkText}
-                </a>
-              </div>
-            )}
-          </div>
+                );
+              })}
+            </ul>
+          </section>
 
-          <div className="space-y-12">
-            <div>
+          <section id="contribution" className="pt-4">
+            <h2 className="text-sm font-mono text-gray-400 mb-4">
+              {t('contribution')} 
+            </h2>
+            <ul className="space-y-2">
+              {project.contribution.map((item, i) => {
+                const translatedContribution = tproject(`contribution_${i}`);
+                return (
+                  <li key={i} className="text-sm text-gray-600 dark:text-slate-300">
+                    {translatedContribution || item}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          <section id="tech-stack" className="pt-4">
+            <h2 className="text-sm font-mono text-gray-400 mb-4">
+              {t('techStack')} 
+            </h2>
+            <ul className="flex flex-wrap gap-2">
+              {project.tags.map((tag, i) => (
+                <li
+                  key={i}
+                  className="text-sm px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {project.link && (
+            <section className="pt-4">
               <h2 className="text-sm font-mono text-gray-400 mb-4">
-                {t('overview')} 
+                {t('links')} 
               </h2>
-              <p className="text-gray-600">{tproject('overview') || project.overview}</p>
-            </div>
-            <div>
-              <h2 className="text-sm font-mono text-gray-400 mb-4">
-                {t('highlights')}
-              </h2>
-              <ul className="space-y-4">
-                {project.highlights.map((highlight, i) => {
-                  // Use indexed key pattern instead of array indexing
-                  const translatedHighlight = tproject(`highlights_${i}`);
-                  return (
-                    <li key={i} className="flex gap-4">
-                      <span className="text-slate-200">→</span>
-                      <span className="text-gray-600 dark:text-slate-200">
-                        {translatedHighlight || highlight}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </section>
-      </article>
-    </main>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm underline hover:text-gray-600"
+              >
+                {tproject('linkText') || project.linkText}
+              </a>
+            </section>
+          )}
+        </article>
+      </main>
+    </div>
   );
 }

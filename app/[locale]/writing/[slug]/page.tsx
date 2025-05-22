@@ -20,19 +20,19 @@ const posts: Record<string, Record<string, BlogPost>> = {
       date: "05-19-2025",
       content: (
         <>
-          <p>I've always really enjoyed configuring my environment. I was always changing one thing or another, but I think I've finally reached the point where I have a perfect setup. I'm still getting used to NeoVim and slowly moving away from VSCode. It's been quite a struggle, but I believe it's a valuable learning experience regardless of your level as a developer.</p>
+          <p>I&apos;ve always really enjoyed configuring my environment. I was always changing one thing or another, but I think I&apos;ve finally reached the point where I have a perfect setup. I&apos;m still getting used to NeoVim and slowly moving away from VSCode. It&apos;s been quite a struggle, but I believe it&apos;s a valuable learning experience regardless of your level as a developer.</p>
 
-          <p className='py-5'>I use Arch Linux on WSL 2. I won’t go into detail about the other tweaks I made on Windows to make it feel more like Linux (but I swear it turned out great).</p>
+          <p className='py-5'>I use Arch Linux on WSL 2. I wont go into detail about the other tweaks I made on Windows to make it feel more like Linux (but I swear it turned out great).</p>
 
-          <p className='py-5'>My main shell is <strong>Zsh</strong> with <strong>Oh-My-Zsh</strong> and the <strong>Powerlevel10k</strong> theme — nothing new under the sun. Why Zsh and not bash? I don't know, use whatever you want.</p>
+          <p className='py-5'>My main shell is <strong>Zsh</strong> with <strong>Oh-My-Zsh</strong> and the <strong>Powerlevel10k</strong> theme — nothing new under the sun. Why Zsh and not bash? I don&apos;t know, use whatever you want.</p>
 
-          <p className='py-5'>I'm still learning how to use <strong>Tmux</strong> for terminal multiplexing.</p>
+          <p className='py-5'>I&apos;m still learning how to use <strong>Tmux</strong> for terminal multiplexing.</p>
 
           <p>FZF, Ripgrep, Bat, Eza, Zoxide — I use them all with default aliases.</p>
 
-          <p>And to monitor the system, I really like <strong>Btop</strong>. Finally, <strong>Fastfetch</strong> is mostly for decoration, but it's impossible to use Arch and not have Fastfetch configured to say <i>use arch btw</i>.</p>
+          <p>And to monitor the system, I really like <strong>Btop</strong>. Finally, <strong>Fastfetch</strong> is mostly for decoration, but it&apos;s impossible to use Arch and not have Fastfetch configured to say <i>use arch btw</i>.</p>
 
-          <p className='py-5'>This whole stack was built with the goal of maximizing productivity. Does it actually do that? I have no idea. I'm still tweaking small things, but I already consider it a solid enough setup to work with comfortably every day.</p>
+          <p className='py-5'>This whole stack was built with the goal of maximizing productivity. Does it actually do that? I have no idea. I&apos;m still tweaking small things, but I already consider it a solid enough setup to work with comfortably every day.</p>
         </>
       )
     },

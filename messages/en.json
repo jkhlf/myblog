@@ -1,8 +1,7 @@
 {
     "Principal": {
       "title": "Hey, I'm Khalaf",
-      "description": "Software developer with hands-on experience in web and mobile applications. I work with technologies such as JavaScript, React, TypeScript, Node.js and Java, always focused on delivering measurable results and scalable applications. Recently I start Learning Golang and back to my focus in Java.",
-      "funny": "Apart from work, you'll often find me at the gym or gaming, 90% playing TFT or soulslike."
+      "description": "Full-Stack Developer with 1 year of hands-on experience, focused on building web applications. Proficient in JavaScript, React, Next.js, ASP.NET Core, and Java, committed to delivering optimized solutions that drive real business value."
     },
     "Navigation": {
       "work": "/WORK",
@@ -15,7 +14,7 @@
     },
     "WritingPage": {
       "title": "Writing.",
-      "comingSoon": "One day I will have enough knowledge to write an article :)",
+      "comingSoon": "I don't write much, so enjoy it while it lasts.",
       "back": "BACK"
     },
     "WorksPage": {
@@ -31,8 +30,10 @@
       "viewProject": "View Project",
       "back": "BACK",
       "contribution": "CONTRIBUTOIN",
-      "techStack": "TECH STACK", 
-      "links": "LINKS"         
+      "techStack": "TECH STACK",
+      "links": "LINKS",
+      "video": "Application Presentation",
+      "videoNotSupported": "Your browser does not support the video tag."
     },
     "AboutPage": {
       "title": "About Me",
@@ -45,6 +46,18 @@
       "experience": "Experience"
     },
     "Projects": {
+      "log-manager": {
+        "title": "Log Management System",
+        "description": "Developed a comprehensive log management service using ASP.NET Core (.NET 8) with RESTful API architecture.",
+        "linkText": "See the post on LinkedIn",
+        "contribution_0": "I work as a FullStack Developer, implementing the Backend funcionality using ASP.NET Core (.NET 8) and SQL Server. I also developed the Frontend pagination using HTML and Javascript.",
+        "contribution_1": "Learning about C# and ASP.NET Core",
+        "contribution_2": "SQL Server Database",
+        "video": "Application Presentation",
+        "overview": "The Log Service is an academic full-stack project developed in collaboration with 4 classmates. It aims to provide a robust and intuitive solution for centralized log management, enabling users to effectively monitor, analyze, and react to application events. The system focuses on improving operational visibility and ensuring system reliability through proactive alerting and comprehensive data querying capabilities",
+        "highlights_0": "Built a responsive Front-End with **HTML, CSS**, and **JavaScript** for intuitive log querying (by date and integration type) and optimized navigation with pagination.",
+        "highlights_1": "Engineered an email notification system for critical/high-severity logs, incorporating resilient background services with retry mechanisms to ensure reliable alert delivery."
+      },
       "anime-tracker": {
         "title": "Anime Tracker",
         "description": "A web application that helps users track their favorite anime series and discover new shows.",

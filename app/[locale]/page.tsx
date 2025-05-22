@@ -1,8 +1,8 @@
-import { ArrowRight } from 'lucide-react'
-import { ProjectCard } from '@/components/project-card'
-import { projects } from '@/app/[locale]/data/projects'
+import { projects } from '@/app/[locale]/data/projects';
+import { ProjectCard } from '@/components/project-card';
+import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { getTranslations } from "next-intl/server";
-import { Link } from '@/i18n/navigation'
 
 export default async function Home() {
   const t = await getTranslations("Principal");
@@ -14,7 +14,7 @@ export default async function Home() {
         <h1 className="text-4xl font-normal">{t("title")}</h1>
         <div className="max-w-2xl space-y-4 text-gray-600">
           <p>{t("description")}</p>
-          <p>{t("funny")}</p>
+          {/* <p>{t("funny")}</p> */}
         </div>
       </section>
       <section className="space-y-8">

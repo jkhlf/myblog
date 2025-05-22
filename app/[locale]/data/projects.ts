@@ -15,9 +15,30 @@ export interface Project {
   contribution: string[]
   overview: string
   highlights: string[]
+  video?: string
 }
 
 export const projects: Project[] = [
+    {
+    id: "004",
+    slug: "log-manager",
+    title: "Log Management System",
+    year: 2025,
+    role: "Full-Stack Developer",
+    description: "Developed a comprehensive log management service using ASP.NET Core (.NET 8) with RESTful API architecture.",
+    image: "/imgs/logs-view.png",
+    link: "/",
+    linkText: "See the post on LinkedIn",
+    tags: ["C#", "API", "ASP.NET Core", "SQL Server"],
+    duration: "2 months",
+    contribution: ["Backend", "API Development", "Database Design"],
+    overview: "The Log Service is an academic full-stack project developed in collaboration with 4 classmates. It aims to provide a robust and intuitive solution for centralized log management, enabling users to effectively monitor, analyze, and react to application events. The system focuses on improving operational visibility and ensuring system reliability through proactive alerting and comprehensive data querying capabilities",
+    highlights: [
+     "Built a responsive Front-End with **HTML, CSS**, and **JavaScript** for intuitive log querying (by date and integration type) and optimized navigation with pagination.",
+    "Engineered an email notification system for critical/high-severity logs, incorporating resilient background services with retry mechanisms to ensure reliable alert delivery.",
+    ],
+    video: "/imgs/Logs.mp4"
+  },
   {
     id: "003",
     slug: "anime-tracker",

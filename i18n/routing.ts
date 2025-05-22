@@ -4,12 +4,10 @@ export const routing = defineRouting({
   locales: ["en", "pt"],
   defaultLocale: "en",
   pathnames: {
-    // Home page
     "/": {
       en: "/",
       pt: "/",
     },
-    // Writing section
     "/writing": {
       en: "/writing",
       pt: "/artigos",
@@ -18,7 +16,6 @@ export const routing = defineRouting({
       en: "/writing/[slug]",
       pt: "/artigos/[slug]",
     },
-    // Works section
     "/works": {
       en: "/works",
       pt: "/trabalhos",
@@ -27,7 +24,6 @@ export const routing = defineRouting({
       en: "/works/[slug]",
       pt: "/trabalhos/[slug]",
     },
-    // About page
     "/about": {
       en: "/about",
       pt: "/sobre",

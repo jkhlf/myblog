@@ -1,8 +1,7 @@
 {
   "Principal": {
     "title": "Khalaf, João.",
-    "description": "Desenvolvedor de software com experiência prática em aplicações web e mobile. Trabalho com tecnologias como JavaScript, React, TypeScript, Node.js e Java, sempre focado em entregar resultados mensuráveis ​​e aplicações escalaveis. Atualmente estou aprendendo Golang e voltando meu foco para Java.",
-    "funny": "Fora do trabalho, estou sempre na academia ou jogando, 90% das vezes jogando TFT ou algum soulslike."
+    "description": "Desenvolvedor Full-Stack com 1 ano de experiência prática, focado em construir aplicações web. Proficiente em JavaScript, React, Next.js, ASP.NET Core e Java, focado em entregar soluções otimizadas e que gerem valor real para o negócio."
   },
   "Navigation": {
     "work": "/TRABALHOS",
@@ -15,7 +14,7 @@
   },
   "WritingPage": {
     "title": "Artigos.",
-    "comingSoon": "Um dia terei conhecimento suficiente para escrever um artigo :)",
+    "comingSoon": "Eu não escrevo muito, então aproveite enquanto dura.",
     "back": "VOLTAR"
   },
   "WorksPage": {
@@ -32,7 +31,9 @@
     "back": "VOLTAR",
     "contribution": "CONTRIBUIÇÃO",
     "techStack": "TECNOLOGIAS",
-    "links": "LINKS"
+    "links": "LINKS",
+    "video": "Apresentação da aplicação",
+    "videoNotSupported": "Seu navegador não suporta a tag de vídeo."
   },
   "AboutPage": {
     "title": "Sobre Mim",
@@ -45,6 +46,18 @@
     "experience": "Experiência"
   },
   "Projects": {
+    "log-manager": {
+    "title": "Sistema de Gerenciamento de Logs",
+    "description": "Desenvolvi um serviço abrangente de gerenciamento de logs usando ASP.NET Core (.NET 8) com arquitetura RESTful API.",
+    "linkText": "Veja a publicação no LinkedIn",
+    "contribution_0": "Trabalhei como Desenvolvedor FullStack, implementando a funcionalidade de Backend usando ASP.NET Core (.NET 8) e SQL Server. Também desenvolvi a paginação Frontend usando HTML e Javascript.",
+    "contribution_1": "Aprendi sobre C# e ASP.NET Core",
+    "contribution_2": "Banco de Dados SQL Server",
+    "video": "Apresentação da aplicação",
+    "overview": "O Serviço de Logs é um projeto acadêmico full-stack desenvolvido em colaboração com 4 colegas de turma. Seu objetivo é fornecer uma solução robusta e intuitiva para o gerenciamento centralizado de logs, permitindo que os usuários monitorem, analisem e reagirem com eficácia aos eventos da aplicação. O sistema se concentra em melhorar a visibilidade operacional e garantir a confiabilidade do sistema por meio de alertas proativos e recursos abrangentes de consulta de dados",
+    "highlights_0": "Construí um Front-End responsivo com HTML, CSS e JavaScript para consulta intuitiva de logs (por data e tipo de integração) e navegação otimizada com paginação.",
+    "highlights_1": "Projetei um sistema de notificação por e-mail para logs críticos/de alta gravidade, incorporando serviços de segundo plano resilientes com mecanismos de repetição para garantir a entrega confiável de alertas."
+},
     "anime-tracker": {
       "title": "Anime Tracker",
       "description": "Um aplicativo da web que ajuda os usuários a rastrear suas séries de anime favoritas e descobrir novos programas.",

@@ -1,9 +1,9 @@
-import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { projects } from '@/app/[locale]/data/projects';
-import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
-import Image from 'next/image';
 import SideNavigation from '@/components/side-navigation';
+import { Link } from '@/i18n/navigation';
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 
 type Params = {
   locale: string;
@@ -44,8 +44,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const navItems = [
     { label: t('overview'), targetId: 'overview' },
     { label: t('highlights'), targetId: 'highlights' },
+    {label : t('video'), targetId: 'video'},
     { label: t('contribution'), targetId: 'contribution' },
-    { label: t('techStack'), targetId: 'tech-stack' }
+    { label: t('techStack'), targetId: 'tech-stack' },
+
   ];
 
   return (
@@ -54,10 +56,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       <div className="fixed left-8 top-[28%] z-10 hidden lg:block">
         <SideNavigation items={navItems} />
       </div>
-      
+
       {/* Conteúdo principal centralizado */}
       <main className="px-6 dark:text-slate-100 w-full">
-        <nav className="flex items-center gap-4 mb-10 text-sm">
+        <nav className="flex items-start gap-4 mb-10 text-sm">
           <Link href="/" className="flex items-center gap-2 hover:text-gray-600">
             <ArrowLeft size={16} />
             {t('back')}
@@ -65,12 +67,12 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         </nav>
 
         <article className="space-y-16">
-          <header className="space-y-8 text-center">
+          <header className="space-y-8 text-start">
           <h1 className="text-4xl font-normal">{tproject('title') || project.title}</h1>
           <p className="text-lg text-gray-600 max-w-2xl dark:text-slate-300">{tproject('description') || project.description}</p>
 
             <div className="space-y-2">
-              <div className="flex items-center  justify-center gap-4 text-sm text-gray-500">
+              <div className="flex items-start  justify-start gap-4 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
                   <Calendar size={16} />
                   <span>{project.year}</span>
@@ -100,7 +102,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
           <section id="overview" className="pt-4">
             <h2 className="text-sm font-mono text-gray-400 mb-4">
-              {t('overview')} 
+              {t('overview')}
             </h2>
             <p className="text-gray-600 dark:text-slate-300">{tproject('overview') || project.overview}</p>
           </section>
@@ -124,9 +126,26 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             </ul>
           </section>
 
+           {project.video && (
+            <section id="video" className="pt-4">
+              <h2 className="text-sm font-mono text-gray-400 mb-4">
+                {t('video')}
+              </h2>
+              <div className="aspect-video relative rounded-lg overflow-hidden">
+                <video
+                  controls
+                  className="w-full h-full object-cover"
+                  preload="metadata"
+                >
+                  <source src={project.video} type="video/mp4" />
+                  {t('videoNotSupported') || 'Your browser does not support the video tag.'}
+                </video>
+              </div>
+            </section>
+          )}
           <section id="contribution" className="pt-4">
             <h2 className="text-sm font-mono text-gray-400 mb-4">
-              {t('contribution')} 
+              {t('contribution')}
             </h2>
             <ul className="space-y-2">
               {project.contribution.map((item, i) => {
@@ -140,9 +159,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             </ul>
           </section>
 
+
           <section id="tech-stack" className="pt-4">
             <h2 className="text-sm font-mono text-gray-400 mb-4">
-              {t('techStack')} 
+              {t('techStack')}
             </h2>
             <ul className="flex flex-wrap gap-2">
               {project.tags.map((tag, i) => (
@@ -159,7 +179,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
           {project.link && (
             <section className="pt-4">
               <h2 className="text-sm font-mono text-gray-400 mb-4">
-                {t('links')} 
+                {t('links')}
               </h2>
               <a
                 href={project.link}

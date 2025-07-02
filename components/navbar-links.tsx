@@ -8,11 +8,11 @@ import Image from 'next/image';
 
 function NavLinks() {
   const t = useTranslations('Navigation');
-  
+
   return (
     <>
     <div className="mb-4">
-      <Image 
+      <Image
         src="/imgs/banner.jpg"
         alt=''
         width={1800}
@@ -28,6 +28,7 @@ function NavLinks() {
           <Link href="/" className="hover:text-gray-600 text-sm px-2 py-1">{t('work')}</Link>
           <Link href="/writing" className="hover:text-gray-600 text-sm px-2 py-1">{t('writing')}</Link>
           <Link href="/about" className="hover:text-gray-600 text-sm px-2 py-1">{t('about')}</Link>
+          <Link href="/college" className="hover:text-gray-600 text-sm px-2 py-1">{t('college')}</Link>
         </div>
       </div>
         <LocaleSwitcher />

@@ -6,7 +6,8 @@
     "Navigation": {
       "work": "/WORK",
       "writing": "/WRITING",
-      "about": "/ABOUT"
+      "about": "/ABOUT",
+      "college": "/COLLEGE"
     },
     "HomePage": {
       "featuredWork": "Featured Work",
@@ -18,6 +19,10 @@
       "back": "BACK"
     },
     "WorksPage": {
+      "back": "BACK",
+      "allWorks": "ALL WORKS"
+    },
+    "CollegePage": {
       "back": "BACK",
       "allWorks": "ALL WORKS"
     },

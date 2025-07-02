@@ -6,7 +6,9 @@
   "Navigation": {
     "work": "/TRABALHOS",
     "writing": "/ARTIGOS",
-    "about": "/SOBRE"
+    "about": "/SOBRE",
+    "college": "/FACULDADE"
+
   },
   "HomePage": {
     "featuredWork": "Trabalhos em Destaque",
@@ -21,6 +23,10 @@
     "back": "VOLTAR",
     "allWorks": "TODOS OS TRABALHOS"
   },
+   "CollegePage": {
+      "back": "BACK",
+      "allWorks": "ALL WORKS"
+    },
   "Project": {
     "year": "Ano",
     "duration": "Duração",

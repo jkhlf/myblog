@@ -28,6 +28,10 @@ export const routing = defineRouting({
       en: "/about",
       pt: "/sobre",
     },
+     "/college": {
+      en: "/college",
+      pt: "/faculdade",
+    },
   },
 });
 
